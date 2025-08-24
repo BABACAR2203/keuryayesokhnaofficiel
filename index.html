@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
-  
 <head>
-    <!-- AOS CSS -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap Responsive Shell</title>
 
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KYSG</title>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
+  <!-- Bootstrap 5 (CSS uniquement) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <!-- (Optionnel) Styles minimes pour voir les limites des conteneurs lors des tests -->
+  <style>
+    /* Supprime si tu veux 100% Bootstrap pur */
+    /* .debug { outline: 1px dashed rgba(0,0,0,.15); } */
+  </style>
 </head>
+<body>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container">
@@ -28,31 +28,7 @@
       <ul class="navbar-nav ms-auto">
         
 
-        <!-- Lien normal -->
-        <li class="nav-item">
-          <a class="nav-link" href="#Accueil">Accueil</a>
-        </li>
-
-        <!-- Dropdown menu -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-             data-bs-toggle="dropdown" aria-expanded="false">
-            L’École
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#about">À propos</a></li>
-            <li><a class="dropdown-item" href="#pédagogie">Notre pédagogie</a></li>
-            <li><a class="dropdown-item" href="#programme scolaire">programme scolaire</a> </li>
-             <li><a class="dropdown-item" href="#equipe pédagogique">Équipe pédagogique</a></li>
-              <li><a class="dropdown-item" href="#Admissions">Admissions</a></li>
-                <li><a class="dropdown-item" href="#Galerie">Galerie</a></li>
-          </ul>
-        </li>
-
-        <!-- Autres liens -->
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
+       
 
       </ul>
     </div>
@@ -361,15 +337,6 @@
   </div>
 </section>
 
-
-
-
-
-
-
- 
-
-  
   <!-- Portfolio Section -->
   <section class="portfolio-section py-5 bg-light">
     <div class="container">
@@ -381,10 +348,8 @@
       </div>
       
       <h3 class="text-center fw-bold mb-4">GALLERIE</h3>
-      
-     
-      
-      <div class="row g-4">
+         
+            <div class="row g-4">
         <div class="col-md-4">
           <div class="card border-0 shadow-sm overflow-hidden">
             <img src="IMG-20231113-WA0076.jpg" class="card-img-top" alt="Projet 1">
@@ -549,6 +514,9 @@
 </section>
 
 
+  <!-- Bootstrap 5 (JS bundle = Popper inclus) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
 <script>
 document.getElementById("whatsappForm").addEventListener("submit", function(e) {
     e.preventDefault(); // Empêche l'envoi classique
@@ -570,72 +538,6 @@ document.getElementById("whatsappForm").addEventListener("submit", function(e) {
 });
 
 </script>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-  
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Custom JS -->
-  <script src="script.js"></script>
-  
-  <script>
-    // Portfolio filter hover effect
-    document.querySelectorAll('.card.overflow-hidden').forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        card.querySelector('.card-img-overlay').style.transform = 'translateY(0)';
-      });
-      card.addEventListener('mouseleave', () => {
-        card.querySelector('.card-img-overlay').style.transform = 'translateY(100%)';
-      });
-    });
-    
-    // Portfolio filter buttons
-    document.querySelectorAll('.portfolio-section .btn-outline-warning').forEach(btn => {
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('.portfolio-section .btn-outline-warning').forEach(b => {
-          b.classList.remove('active');
-        });
-        this.classList.add('active');
-      });
-    });
-    
-  </script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-<!-- AOS CSS (dans <head>) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-
-
-
-<!-- AOS JS (juste avant </body>) -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
-
-<!-- Initialisation AOS en toute sécurité -->
-<script>
-  window.addEventListener('load', function () {
-    if (window.AOS && typeof AOS.init === 'function') {
-      AOS.init({
-        duration: 1000, // vitesse anim
-        once: true,     // anime une seule fois
-        disable: false  // animations actives aussi sur mobile
-      });
-    } else {
-      console.warn('AOS non chargé : vérifie le lien CDN ou ta connexion.');
-    }
-  });
-</script>
-
-<!-- AOS JS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
@@ -645,11 +547,8 @@ document.getElementById("whatsappForm").addEventListener("submit", function(e) {
     disable: false   // animations aussi sur mobile
   });
 </script>
-<!-- Footer -->
-  <footer class="bg-dark text-white py-4">
-    <div class="container text-center">
-      <p class="mb-0"> 2025 keuryayesokhnagueye. Tous droits réservés.</p>
-    </div>
-  </footer>
+
+  <!-- (Optionnel) Script perso si nécessaire -->
+  <!-- <script>/* Ton JS ici */</script> -->
 </body>
 </html>
